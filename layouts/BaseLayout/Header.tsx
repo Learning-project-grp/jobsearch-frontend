@@ -35,7 +35,7 @@ const Header = (props: Props) => {
       px="4"
     >
       <HStack spacing="8">
-        <LogoIcon fontSize="xl" w="40" />
+        <LogoIcon fontSize="xl" w="40" onClick={() => Router.push('/')} _hover={{cursor: 'pointer'}} />
         {menus.map((menu) => (
           <Box key={menu.label} _hover={{ color: '#0d3880' }}>
             <Link href={menu.to}>{menu.label}</Link>
