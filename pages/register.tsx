@@ -4,6 +4,7 @@ import FormInput from 'components/Form/FormInput'
 import Button from 'components/Button'
 import FormRadioGroup from 'components/Form/FormRadioGroup'
 import useRegister, { RegisterData } from 'hooks/auth/useRegister'
+import Router from 'next/router'
 
 type Props = {}
 
@@ -20,6 +21,7 @@ const RegisterPage = (props: Props) => {
   const onSubmit: SubmitHandler<FormValues> = async (values) => {
     const { confirmPassword, ...restValues } = values
     await mutateAsync({ ...restValues, role: 'User' })
+    Router.push('/login')
   }
 
   return (

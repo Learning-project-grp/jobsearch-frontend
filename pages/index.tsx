@@ -1,9 +1,12 @@
 import { Box, Image } from '@chakra-ui/react'
+import useAuthTest from 'hooks/auth/useAuthTest'
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 
 const Home: NextPage = () => {
+  const { data } = useAuthTest()
+
   return (
     <div>
       <Head>
@@ -13,8 +16,8 @@ const Home: NextPage = () => {
       </Head>
       <Box
         backgroundImage="url('./banner.svg')"
-        backgroundSize='cover'
-        backgroundPosition='50% 50%'
+        backgroundSize="cover"
+        backgroundPosition="50% 50%"
         w="100%"
         h="256px"
         position="absolute"

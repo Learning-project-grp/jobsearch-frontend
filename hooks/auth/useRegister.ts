@@ -1,4 +1,5 @@
 import { useMutation } from '@tanstack/react-query'
+import Toast from 'components/Toast'
 import Axios from 'utils/axios'
 
 export type RegisterData = {
@@ -42,7 +43,9 @@ const register = (props: Props): Promise<RegisterResponse> => {
 
 const useRegister = () => {
   return useMutation(register, {
-    onSuccess: () => {},
+    onSuccess: () => {
+      Toast.success({ title: 'Registered successfully' })
+    },
   })
 }
 

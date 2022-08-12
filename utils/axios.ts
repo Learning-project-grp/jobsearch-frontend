@@ -7,7 +7,9 @@ const Axios = axios.create({
 // Add a request interceptor
 Axios.interceptors.request.use(
   function (config) {
-    // Do something before request is sent
+    if (config.headers && localStorage.getItem('jwt')) {
+      config.headers.Authorization = `Bearer ${localStorage.getItem('jwt')}`
+    }
     return config
   },
   function (error) {
@@ -21,6 +23,7 @@ Axios.interceptors.response.use(
   function (response) {
     // Any status code that lie within the range of 2xx cause this function to trigger
     // Do something with response data
+    if(response.data) return response.data
     return response
   },
   function (error) {
