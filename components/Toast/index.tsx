@@ -20,7 +20,7 @@ const Toast = {
       ...props,
     }),
   error: (props: ToastProps) =>
-    CToast({
+    toast({
       status: 'error',
       ...props,
     }),
