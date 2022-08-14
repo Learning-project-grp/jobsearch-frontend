@@ -14,13 +14,13 @@ const BaseLayout = ({ children }: PropsWithChildren<Props>) => {
         left="0"
         top="0"
         zIndex="2"
-        shadow='sm'
+        shadow="sm"
       >
         <Box maxW="container.xl" m="auto">
           <Header />
         </Box>
       </Box>
-      <Box mt="80px" >{children}</Box>
+      <Box mt={{ base: '80px', md: '145px', lg: '80px' }}>{children}</Box>
     </Box>
   )
 }
