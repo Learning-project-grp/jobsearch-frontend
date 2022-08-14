@@ -1,3 +1,4 @@
+import Router from 'next/router';
 import axios from 'axios'
 
 const Axios = axios.create({
@@ -23,7 +24,13 @@ Axios.interceptors.response.use(
   function (response) {
     // Any status code that lie within the range of 2xx cause this function to trigger
     // Do something with response data
-    if(response.data) return response.data
+    if(response.data) {
+      if (response.data.code === '401') {
+        localStorage.removeItem('jwt')
+        return Router.push('/login')
+      }
+      return response.data
+    }
     return response
   },
   function (error) {
