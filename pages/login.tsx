@@ -48,8 +48,6 @@ const LoginPage = (props: Props) => {
     await Router.replace('/')
   }
 
-  if (!mounted) return null
-
   return (
     <Flex
       minH={'100vh'}
