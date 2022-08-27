@@ -34,14 +34,8 @@ const RegisterPage = (props: Props) => {
   }
 
   return (
-    <Flex
-      minH={'100vh'}
-      align={'center'}
-      justify={'center'}
-      // bg={useColorModeValue("gray.50", "gray.800")}
-    >
+    <Flex minH={'100vh'} align={'center'} justify={'center'}>
       <Stack
-        className="testttttt"
         spacing={20}
         mx={'auto'}
         w={{ base: 'xl', sm: '2xl', md: '3xl', lg: '4xl' }}
