@@ -4,7 +4,7 @@ interface Props extends IconProps {}
 
 const LogoIcon = (props: Props) => {
   return (
-    <Icon width="100.000000pt" height="70.000000pt" viewBox="0 0 500.000000 500.000000" {...props}>
+    <Icon width="100.000000pt" height="50.000000pt" viewBox="0 0 450.000000 450.000000" {...props}>
       <g transform="translate(0.000000,500.000000) scale(0.100000,-0.100000)"
 fill="blue" stroke="none">
 <path d="M2245 4244 c-149 -16 -316 -64 -440 -126 -232 -116 -447 -331 -563

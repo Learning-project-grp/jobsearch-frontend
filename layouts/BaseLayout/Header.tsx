@@ -32,7 +32,7 @@ const Header = (props: Props) => {
     },
     {
       label: 'MyJobStreet',
-      to: '/myjobstreet',
+      to: '/profile',
     },
     {
       label: 'Company profiles',
@@ -55,7 +55,7 @@ const Header = (props: Props) => {
         spacing="8"
         justifyContent="space-between"
         bg="gray.50"
-        py="5"
+        py="2"
         px="4"
       >
         <HStack spacing="8">
