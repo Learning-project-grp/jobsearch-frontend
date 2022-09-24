@@ -13,8 +13,8 @@ type Props = {}
 
 const ProfileLayout = ({ children }: PropsWithChildren<Props>) => {
   const submenu = [
-    { name: 'Experience', icon: '', to: '/profile/Experience' },
-    { name: 'Education', icon: '', to: '/profile/Education' },
+    { name: 'Experience', icon: '', to: '/profile/experience' },
+    { name: 'Education', icon: '', to: '/profile/education' },
     { name: 'Skills', icon: '' },
     { name: 'Languages', icon: '' },
     { name: 'Additional Info', icon: '' },
@@ -24,7 +24,7 @@ const ProfileLayout = ({ children }: PropsWithChildren<Props>) => {
   ]
 
   return (
-    <Flex gap={6} pt={10} px={{ sm: '2', md: '8', xl: 'none' }}>
+    <Flex gap={6} pt={10} px={{ base: '2', md: '8', xl: 'none' }}>
       {/* Submenu */}
       <Box
         display={{ base: 'none', lg: 'block' }}
@@ -54,8 +54,8 @@ const ProfileLayout = ({ children }: PropsWithChildren<Props>) => {
           </Flex>
         </Link>
 
-        {submenu.map((submenu) => (
-          <Link _hover={{ underline: 'false' }} href={submenu.to}>
+        {submenu.map((submenu, index) => (
+          <Link key={index} _hover={{ underline: 'false' }} href={submenu.to}>
             <Flex pl={8} py={2} w={'full'} _hover={{ bgColor: 'gray.50' }}>
               {/* <Icon /> */}
               <Text>{submenu.name}</Text>
@@ -68,7 +68,7 @@ const ProfileLayout = ({ children }: PropsWithChildren<Props>) => {
 
       {/* Content */}
       <Box
-        w={{ sm: 'full', lg: '70%' }}
+        w={{ base: 'full', lg: '70%' }}
         rounded={'2xl'}
         bg={useColorModeValue('white', 'gray.700')}
         boxShadow={'md'}

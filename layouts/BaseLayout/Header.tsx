@@ -32,7 +32,7 @@ const Header = (props: Props) => {
     },
     {
       label: 'MyJobStreet',
-      to: '/profile/Experience',
+      to: '/profile/experience',
     },
     {
       label: 'Company profiles',
