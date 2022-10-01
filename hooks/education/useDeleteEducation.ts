@@ -1,7 +1,7 @@
 import useAuthStore from 'stores/authStore'
 import { useMutation, useQueryClient } from '@tanstack/react-query'
 import Axios from 'utils/axios'
-import Toast from 'components/Toast'
+import Toast from 'components/common/Toast'
 
 const deleteEducation = (id: string): Promise<string> => {
   return Axios.delete(`exp/${id}`)

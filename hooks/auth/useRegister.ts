@@ -1,5 +1,5 @@
 import { useMutation } from '@tanstack/react-query'
-import Toast from 'components/Toast'
+import Toast from 'components/common/Toast'
 import Axios from 'utils/axios'
 
 export type RegisterData = {

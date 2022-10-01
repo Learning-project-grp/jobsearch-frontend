@@ -1,5 +1,5 @@
 import { Box, HStack, VStack } from '@chakra-ui/react'
-import Button from 'components/Button'
+import Button from 'components/common/Button'
 import LogoIcon from 'icons/LogoIcon'
 import Link from 'next/link'
 import Router, { useRouter } from 'next/router'
@@ -8,7 +8,7 @@ import { useToggle } from 'react-use'
 import { useEffect } from 'react'
 import useJwtToken from 'hooks/useJwtToken'
 import withNoSSR from 'hoc/withNoSSR'
-import Toast from 'components/Toast'
+import Toast from 'components/common/Toast'
 
 type Props = {}
 

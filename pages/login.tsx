@@ -1,6 +1,6 @@
 import { FormProvider, SubmitHandler, useForm } from 'react-hook-form'
-import FormInput from 'components/Form/FormInput'
-import Button from 'components/Button'
+import FormInput from 'components/common/Form/FormInput'
+import Button from 'components/common/Button'
 import useLogin, { LoginData } from 'hooks/auth/useLogin'
 import Router from 'next/router'
 import { useEffect, useState } from 'react'
@@ -54,13 +54,7 @@ const LoginPage = (props: Props) => {
       justify={'center'}
       bg={useColorModeValue('gray.50', 'gray.800')}
     >
-      <Stack
-        spacing={8}
-        mx={'auto'}
-        w={'xl'}
-        py={12}
-        px={6}
-      >
+      <Stack spacing={8} mx={'auto'} w={'xl'} py={12} px={6}>
         <Stack align={'center'}>
           <Heading fontSize={'4xl'}>Sign in to your account</Heading>
           <Text fontSize={'lg'} color={'gray.600'}>

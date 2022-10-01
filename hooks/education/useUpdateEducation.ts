@@ -1,7 +1,7 @@
 import { useMutation, useQueryClient } from '@tanstack/react-query'
 import Axios from 'utils/axios'
 import { Education } from './useGetEducation'
-import Toast from 'components/Toast'
+import Toast from 'components/common/Toast'
 
 type UpdateEducationData = Education
 

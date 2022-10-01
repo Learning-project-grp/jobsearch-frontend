@@ -1,7 +1,7 @@
 import { useMutation, useQueryClient } from '@tanstack/react-query'
 import Axios from 'utils/axios'
 import { Experience } from './useGetExperience'
-import Toast from 'components/Toast'
+import Toast from 'components/common/Toast'
 
 type CreateExperienceData = Omit<Experience, 'id' | 'createTime' | 'updateTime'>
 

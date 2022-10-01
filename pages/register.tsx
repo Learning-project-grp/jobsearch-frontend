@@ -9,9 +9,9 @@ import {
   Radio,
   useColorModeValue,
 } from '@chakra-ui/react'
-import FormInput from 'components/Form/FormInput'
-import Button from 'components/Button'
-import FormRadioGroup from 'components/Form/FormRadioGroup'
+import FormInput from 'components/common/Form/FormInput'
+import Button from 'components/common/Button'
+import FormRadioGroup from 'components/common/Form/FormRadioGroup'
 import useRegister, { RegisterData } from 'hooks/auth/useRegister'
 import Router from 'next/router'
 
