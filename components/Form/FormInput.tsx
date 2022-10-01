@@ -49,7 +49,7 @@ const FormInput = ({
         {label}
         {(isRequired || rules?.required) && (
           <Box color="red.500" ml="1" as="span">
-            *
+            {label ? '*' : ''}
           </Box>
         )}
       </FormLabel>
