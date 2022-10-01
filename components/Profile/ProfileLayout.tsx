@@ -33,6 +33,9 @@ const ProfileLayout = ({ children }: PropsWithChildren<Props>) => {
         bg={useColorModeValue('white', 'gray.700')}
         boxShadow={'md'}
         py={10}
+        h="full"
+        pos="sticky"
+        top="120px"
       >
         <Link _hover={{ underline: 'false' }}>
           <Flex
