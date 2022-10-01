@@ -37,13 +37,14 @@ const RegisterPage = (props: Props) => {
     <Flex
       align={'center'}
       justify={'center'}
-      bg={useColorModeValue("gray.50", "gray.800")}
+      bg={useColorModeValue('gray.50', 'gray.800')}
     >
       <Stack
         spacing={8}
         mx={'auto'}
         w={{ base: 'xl', sm: '2xl', md: '3xl', lg: '4xl' }}
-        py={12} px={6}
+        py={12}
+        px={6}
       >
         <Stack align={'center'}>
           <Heading fontSize={'4xl'}>Sign up</Heading>
