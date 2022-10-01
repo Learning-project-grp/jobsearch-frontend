@@ -2,7 +2,7 @@ import create from 'zustand'
 import { devtools, persist } from 'zustand/middleware'
 
 interface AuthState {
-  userInfo: any
+  userInfo?: { userId: string }
   setUserInfo: (userInfo: any) => void
 }
 
@@ -10,7 +10,7 @@ const useAuthStore = create<AuthState>()(
   devtools(
     persist(
       (set) => ({
-        userInfo: {},
+        userInfo: undefined,
         setUserInfo: (userInfo) => set(() => ({ userInfo })),
       }),
       {

@@ -1,6 +1,7 @@
 import { useMutation } from '@tanstack/react-query'
 import Toast from 'components/Toast'
 import useJwtToken from 'hooks/useJwtToken'
+import useAuthStore from 'stores/authStore'
 import Axios from 'utils/axios'
 
 export type LoginData = {
@@ -20,9 +21,11 @@ const login = (props: Props): Promise<LoginResponse> => {
 }
 
 const useLogin = () => {
+  const setUserInfo = useAuthStore((state) => state.setUserInfo)
   const { setToken } = useJwtToken()
   return useMutation(login, {
     onSuccess: (data) => {
+      setUserInfo({ userId: data.userId })
       setToken(data.token)
       Toast.success({ title: 'Logged in successfully' })
     },
