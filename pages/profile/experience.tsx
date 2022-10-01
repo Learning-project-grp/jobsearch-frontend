@@ -202,3 +202,5 @@ const ExperiencesPage = (props: Props) => {
 }
 
 export default ExperiencesPage
+
+ExperiencesPage.requiredAuth = true

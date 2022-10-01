@@ -6,6 +6,7 @@ import { createStandaloneToast } from '@chakra-ui/toast'
 
 import BaseLayout from 'layouts/BaseLayout'
 import { theme } from 'theme'
+import RouteGuard from 'components/RouteGuard'
 
 const { ToastContainer } = createStandaloneToast()
 
@@ -17,7 +18,13 @@ function MyApp({ Component, pageProps }: AppProps) {
     <QueryClientProvider client={queryClient}>
       <ChakraProvider theme={theme}>
         <BaseLayout>
-          <Component {...pageProps} />
+          {(Component as any).requiredAuth ? (
+            <RouteGuard>
+              <Component {...pageProps} />
+            </RouteGuard>
+          ) : (
+            <Component {...pageProps} />
+          )}
         </BaseLayout>
         <ToastContainer />
       </ChakraProvider>

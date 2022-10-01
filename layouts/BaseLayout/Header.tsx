@@ -9,11 +9,13 @@ import { useEffect } from 'react'
 import useJwtToken from 'hooks/useJwtToken'
 import withNoSSR from 'hoc/withNoSSR'
 import Toast from 'components/common/Toast'
+import useAuthStore from 'stores/authStore'
 
 type Props = {}
 
 const Header = (props: Props) => {
   const router = useRouter()
+  const setUserInfo = useAuthStore((state) => state.setUserInfo)
   const [showMenu, toggleMenu] = useToggle(false)
   const { token, removeToken } = useJwtToken()
 
@@ -46,6 +48,7 @@ const Header = (props: Props) => {
 
   const handleLogout = () => {
     removeToken()
+    setUserInfo()
     Toast.success({ title: 'Logged out successfully' })
     Router.push('/login')
   }

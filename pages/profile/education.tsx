@@ -17,7 +17,7 @@ type FormValues = {
   educations: Education[]
 }
 
-const Education = (props: Props) => {
+const EducationsPage = (props: Props) => {
   const userInfo = useAuthStore((state) => state.userInfo)
   const formMethods = useForm<FormValues>()
   const { control, reset, getValues } = formMethods
@@ -186,4 +186,6 @@ const Education = (props: Props) => {
   )
 }
 
-export default Education
+export default EducationsPage
+
+EducationsPage.requiredAuth = true

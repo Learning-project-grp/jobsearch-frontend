@@ -2,7 +2,7 @@ import { FormProvider, SubmitHandler, useForm } from 'react-hook-form'
 import FormInput from 'components/common/Form/FormInput'
 import Button from 'components/common/Button'
 import useLogin, { LoginData } from 'hooks/auth/useLogin'
-import Router from 'next/router'
+import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
 import useJwtToken from 'hooks/useJwtToken'
 import withNoSSR from 'hoc/withNoSSR'
@@ -21,6 +21,7 @@ type Props = {}
 type FormValues = LoginData
 
 const LoginPage = (props: Props) => {
+  const router = useRouter()
   const [mounted, setMounted] = useState(false)
   const { mutateAsync, isLoading } = useLogin()
   const { token } = useJwtToken()
@@ -33,7 +34,7 @@ const LoginPage = (props: Props) => {
 
   const checkIsLoggedIn = async () => {
     if (token) {
-      await backToHomePage()
+      await backToHomePageOrPrevPage()
     } else {
       setMounted(true)
     }
@@ -41,11 +42,12 @@ const LoginPage = (props: Props) => {
 
   const onSubmit: SubmitHandler<FormValues> = async (values) => {
     await mutateAsync(values)
-    await backToHomePage()
+    await backToHomePageOrPrevPage()
   }
 
-  const backToHomePage = async () => {
-    await Router.replace('/')
+  const backToHomePageOrPrevPage = async () => {
+    const returnUrl = (router.query.returnUrl as string) || '/'
+    await router.replace(returnUrl)
   }
 
   return (

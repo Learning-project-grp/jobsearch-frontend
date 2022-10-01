@@ -1,9 +1,10 @@
 import create from 'zustand'
 import { devtools, persist } from 'zustand/middleware'
 
+type UserInfo = { userId: string }
 interface AuthState {
-  userInfo?: { userId: string }
-  setUserInfo: (userInfo: any) => void
+  userInfo?: UserInfo
+  setUserInfo: (userInfo?: UserInfo) => void
 }
 
 const useAuthStore = create<AuthState>()(
