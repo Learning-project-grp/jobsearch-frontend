@@ -16,7 +16,7 @@ export type Experience = {
 }
 
 type GetUserExperienceData = {
-  id: string
+  id?: string
 }
 
 type GetUserExperienceResponse = Experience[]

@@ -3,12 +3,13 @@ import { useQuery } from '@tanstack/react-query'
 
 export type Education = {
   university: string
-  graduationDate?: Date
+  graduationDate?: string
   qualification: string
   fieldOfStudy: string
   grade: string
   description: string
   userId: string
+  id: string
 }
 
 type GetUserEducationData = {

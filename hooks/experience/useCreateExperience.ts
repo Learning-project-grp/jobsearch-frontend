@@ -2,12 +2,13 @@ import { useMutation, useQueryClient } from '@tanstack/react-query'
 import Axios from 'utils/axios'
 import { Experience } from './useGetExperience'
 import Toast from 'components/Toast'
+
 type CreateExperienceData = Omit<Experience, 'id' | 'createTime' | 'updateTime'>
 
 const createExperience = (
   data: CreateExperienceData
 ): Promise<CreateExperienceData> => {
-  return Axios.post(`exp`, data)
+  return Axios.post('/exp', data)
 }
 
 const useCreateExperience = () => {
